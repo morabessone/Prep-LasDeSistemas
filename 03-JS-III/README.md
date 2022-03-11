@@ -92,6 +92,24 @@ for (let i = 0                 ; i < 10                 ; i++          ) {
 
 En este ejemplo, vemos que inicialmente establecemos nuestra variable `i` en 0, el ciclo se ejecutará y cada vez que llegue al final, aumentará el contador en uno. El bucle `for` evaluará la expresión condicional. Si es `true`, se ejecutará nuevamente, si es `false` dejará de funcionar.
 
+## Bucles `while`
+
+Al igual que el bucle `for` el `while` es una manera de iterar, pero en esta declaramos una sentencia que va a ejecutar nuestro código mientras que sea verdadera. 
+
+```
+let n = 0;
+
+while (n < 3) {
+  n++;
+}
+
+console.log(n);
+// expected output: 3
+```
+
+En este caso, le estamos indicando que mientras que `n` sea menor a 3, itere aumentando su valor en uno. Cuando `n` pasa a ser 3 va a dejar de iterar ya que la condición `n < 3` va a ser `false`.
+
+
 ### El operador ++
 
 Vimos en el último ejemplo el operador `++`. Esta es la abreviatura de Javascript para "Establecer el valor de la variable a su valor actual más uno". Hay algunas más de estas expresiones abreviadas de matemática / asignación variable, las visitaremos en las próximas lecciones.
@@ -109,9 +127,6 @@ for (let i = 0; i >= 0; i++) {
 Debido a que nuestra expresión condicional SIEMPRE será `true` (` i` nunca será menor que 0), este ciclo se ejecutará esencialmente para siempre. Esto interrumpirá su programa y puede bloquear su navegador web o computadora.
 
 
-
-## Abre la carpeta "homework" y completa la tarea descrita en el archivo README
-[Homework](https://github.com/atralice/Curso.Prep.Henry/tree/master/03-JS-II/homework)
 
 ## Recursos adicionales
 
