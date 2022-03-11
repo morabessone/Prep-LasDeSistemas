@@ -1,5 +1,12 @@
 // No cambies los nombres de las funciones.
 
+function esVocal(letra){
+  //Escribe una función que reciba una letra y, si es una vocal, muestre el mensaje “Es vocal”. 
+  //Verificar si el usuario ingresó un string de más de un carácter y, en ese caso, informarle 
+  //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
+  //Escribe tu código aquí
+}
+
 function obtenerMayor(x, y) {
   // "x" e "y" son números enteros (int).
   // Devuelve el número más grande
@@ -30,26 +37,6 @@ function saludo(idioma) {
   // Tu código:
 }
 
-/*
-Para implementar la siguiente función vamos a utilizar una estructura de control de flujo nueva, 
-llamada switch, si no estás familiarizado con esta estructura, es un buen escenario para hacerle 
-una visita al mejor amigo del programador, INTERNET! 
-En la carrera del desarrollador constantemente es necesario recurrir a los recursos que nos 
-proporciona la web (Google, YouTube, MDN, Stack Overflow, y muchos más) en búsqueda de las 
-herramientas necesarias para resolver los distintos problemas que nos enfrentamos, por lo que 
-aprender a realizar estas búsquedas en internet es uno de los skill más importantes que puedes 
-adquirir!
-En tu buscador basta con simplemente escribir "switch Javascript" y listo. Éxitos!
-*/
-function colors(color) {
-  //La función recibe un color. Devolver el string correspondiente:
-  //En caso que el color recibido sea "blue", devuleve --> "This is blue"
-  //En caso que el color recibido sea "red", devuleve --> "This is red"
-  //En caso que el color recibido sea "green", devuleve --> "This is green"
-  //En caso que el color recibido sea "orange", devuleve --> "This is orange"
-  //Caso default: devuelve --> "Color not found"
-  //Usar el statement Switch.
-}
 
 function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
@@ -113,7 +100,7 @@ function tieneTresDigitos(numero){
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
-  //Usar el bucle do ... while.
+  //Usar el bucle ... while.
 }
 
 
@@ -121,11 +108,11 @@ function doWhile(numero) {
 // --------------------------------
 
 module.exports = {
+  esVocal,
   obtenerMayor,
   mayoriaDeEdad,
   conection,
   saludo,
-  colors,
   esDiezOCinco,
   estaEnRango,
   esEntero,

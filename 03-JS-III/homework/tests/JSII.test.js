@@ -4,7 +4,6 @@ const {
   mayoriaDeEdad,
   conection,
   saludo,
-  colors,
   esDiezOCinco,
   estaEnRango,
   esEntero,
