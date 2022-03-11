@@ -1,4 +1,3 @@
-<img  src='../logo.png' height='70px'>
 <table width="100%" style='table-layout:fixed;'>
   <tr>
     <td>
@@ -11,7 +10,7 @@
   </tr>
 </table>
 
-# Lección 2: Introducción a Javascript
+# Lección 1: Introducción a Javascript
 
 En esta lección cubriremos:
 
@@ -19,11 +18,6 @@ En esta lección cubriremos:
 * Variables
 * Strings, Numbers y Booleanos
 * Math
-* Introducción a las Funciones
-* Control de flujo y operadores de comparación
-* Introducción a Node y NPM
-
-<iframe src="https://player.vimeo.com/video/423852829" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ## Introducción a Javascript
 
@@ -106,6 +100,25 @@ var meEncantaJavascript = true;
 ```
 
 Los valores posibles de un dato booleando en JS son: `true` o `false`.
+
+## Undefined y null
+
+Hay un par de objetos Javascript que realmente no encajan en ningún tipo de dato. Esos son los valores `undefined` y` null`. Obtendrás `undefined` cuando busques _algo_ que no existe, como una variable que aún no tiene un valor. `undefined` simplemente significa que lo que estás pidiendo no existe.
+
+```javascript
+console.log(variableInexistente); // undefined
+```
+
+`null` es un objeto que nosotros, los desarrolladores, establecemos cuando queremos decirles a otros desarrolladores que el elemento que están buscando existe, pero no hay ningún valor asociado con él. Mientras que `undefined` está configurado por Javascript,` null` está configurado por un desarrollador. Si alguna vez recibes `null`, debes saber que otro desarrollador estableció ese valor en` null`
+
+```javascript
+let numeroTelefono = '11-1234-5678';
+numeroTelefono = null;
+
+numeroTelefono; // null
+```
+
+Una última cosa a tener en cuenta, ni `undefined` ni` null` son cadenas, están escritas tal como están sin comillas, como un booleano.
 
 ## Operadores
 
@@ -210,127 +223,6 @@ console.log(nombreGato.length); // 5
 
 Veremos muchos otros métodos integrados en otros tipos de datos a lo largo de este curso.
 
-## Introducción a las Funciones
-
-Las funciones son una parte muy importante de todo lenguaje de programacion y sobre todo en JavaScript. Son tipos particulares de Objetos, llamados `callable objects` u objetos invocables, por lo que tienen las mismas propiedades que cualquier objeto.
-
-Ahora que tenemos un conjunto de variables, necesitamos funciones para calcularlas, cambiarlas, hacer algo con ellas. Hay tres formas en que podemos construir una función.
-
-```javascript
-    function miFuncion() {}
-    var otraFuncion = function () {};
-    var yOtra = () => {};
-```
-
-Usaremos la primera forma en esta lección y hablaremos sobre las otras formas en próximas lecciones.
-
-### Anatomía de una Función
-
-```javascript
-function miFuncion() {}
-```
-
-Una función comenzará con la palabra clave `function`, esto le dice a lo que sea que esté ejecutando tu programa que lo que sigue es una función y que debe tratarse como tal. Después de eso viene el nombre de la función, nos gusta dar nombres de funciones que describan lo que hacen. Luego viene un paréntesis abierto y uno cerrado. Y finalmente, abra y cierre los corchetes. Entre estos corchetes es donde irá todo nuestro código a ejecutar.
-
-```javascript
-function logHola() {
-    console.log('hola!');
-}
-
-logHola();
-```
-
-En este ejemplo declaramos una función `logHola` y la configuramos en` console.log` `'hello'`. Entonces podemos ver que para ejecutar esta función, necesitamos escribir el nombre y los paréntesis. Esta es la sintaxis para ejecutar una función. Una función siempre necesita paréntesis para ejecutarse.
-
-### Argumentos
-
-Ahora que podemos ejecutar una función básica, vamos a comenzar a pasarle argumentos.
-
-```javascript
-function logHola(nombre) {
-    console.log('Hola, ' + nombre);
-}
-
-logHola('Martin');
-```
-
-Si agregamos una variable a los paréntesis cuando declaramos la función, podemos usar esta variable dentro de nuestra función. Iniciamos el valor de esta variable pasándola a la función cuando la llamamos. Entonces en este caso `nombre = 'Martin'`. También podemos pasar otras variables a esto:
-
-```javascript
-function logHola(nombre) {
-    console.log( `Hola, ${nombre}`);
-}
-
-var miNombre = 'Antonio';
-logHola(miNombre);
-```
-
-Podemos agregar múltiples argumentos colocando una coma entre ellos:
-
-```javascript
-function sumarDosNumeros(a, b) {
-  var suma = a + b;
-  return suma;
-}
-
-sumarDosNumeros(1, 5); // 6
-```
-### Declaración "return" y Scope
-
-En el ejemplo anterior presentamos la declaración `return`. No vamos a usar `console.log` con todo lo que salga de una función. Lo más probable es que queramos devolver algo. En este caso es la suma de los dos números. Piense en la declaración de retorno ("return") como la única forma en que los datos escapan de una función. No se puede acceder a nada más que a lo que se devuelve fuera de la función. También tenga en cuenta que cuando una función llega a una declaración de retorno, la función detiene inmediatamente lo que está haciendo y "devuelve" lo especificado.
-
-```javascript
-function dividirDosNumeros(a, b) {
-  var producto = a / b;
-  return producto;
-}
-
-dividirDosNumeros(6, 3); // 2
-console.log(producto); // undefined
-```
-Si intentamos `console.log` algo que declaramos dentro de la función, devolverá `undefined` porque no tenemos acceso a él fuera de la función. Esto se llama Scope ("alcance"). La única forma de acceder a algo dentro de la función es devolverlo.
-
-También podemos establecer variables para igualar lo que devuelve una función.
-
-```javascript
-function restarDosNumeros(a, b) {
-  var diferencia = a - b;
-  return diferencia;
-}
-
-var diferenciaDeResta = restarDosNumeros(10, 9);
-console.log(diferenciaDeResta); // 1
-console.log(diferencia); // undefined
-```
-
-Podemos ver que la diferencia se establece dentro de la función. La variable dentro de la función solo pertenece dentro de la función.
-
-## Control de flujo y operadores de comparación
-
-En este ejemplo, vamos a utilizar operadores de control de flujo y comparación. El flujo de control ("control flow") es una forma de que nuestra función verifique si algo es `true`, y ya sea ejecutando el código suministrado si es así o avanzando si no lo es. Para esto usaremos la palabra clave `if`:
-
-```javascript
-function puedeManejar(edad) {
-    if (edad > 18) {
-        return true;
-    }
-
-    return false;
-}
-
-puedeManejar(22); // true
-```
-
-Aquí estamos tomando un número (`edad`) y verificando si la declaración es` true` (`22>18`), lo es, por lo que devolveremos` true`, y la función se detendrá. Si no es así, omitirá ese código y la función devolverá `false`.
-
-El símbolo "mayor que" (`>`) que ve en el último ejemplo se llama _Operador de comparación_. Los operadores de comparación evalúan dos elementos y devuelven `verdadero` o` falso`. Estos operadores son: `<`, `<=`, `>`, `>=`, `===`, `!==`. Aprenderemos más sobre estos operadores en la próxima lección.
-
-## Introducción a Node y NPM
-
-_Node.js_ es un entorno de tiempo de ejecución desarrollado originalmente para su uso en servidores/back-end. Tendremos que instalarlo en nuestras máquinas para completar los próximos ejercicios. Para instalar Node, haga clic aquí: [Descargar e instalar Node.js](https://nodejs.org/en/download/). Node viene con "NPM" incluido. NPM es un administrador de paquetes ("package manager") para paquetes Javascript y lo usaremos a lo largo de nuestro aprendizaje en Henry. Una vez que hayas instalado Node.js, no necesitas hacer nada más para instalar NPM.
-
-## Abre la carpeta "homework" y completa la tarea descrita en el archivo README
-[Homework](https://github.com/atralice/Curso.Prep.Henry/tree/master/02-JS-I/homework)
 
 ## Recursos adicionales
 
