@@ -19,9 +19,6 @@ En esta lección cubriremos:
 * Operadores de comparación
 * `arguments`
 
-* Bucles `for`
-* Operadores logicos
-
 
 ## Introducción a las Funciones
 
